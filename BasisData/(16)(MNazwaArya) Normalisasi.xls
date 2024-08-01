@@ -1,0 +1,34 @@
+Unormalize Form																							
+																						
+No_Invoice	Tanggal_Invoice	Pembeli	Barang	Harga	Jumlah 	Total_Harga	Sub_Total	Pajak	Total_Invoice	Penjual														
+1 28/03/2022	Senin,28 Maret 2022	Ketut Susilo	Kaos	100.000	1	100.000	800.000	80.000	880.000	Juliana Silva 														
+			Jaket	200.000		200.000																		
+			Kaos Polo	120.000		120.000																		
+			Sepatu	230.000		230.000																		
+				100.000		100.000																		
+																								
+1NF																								
+No_Invoice	Tanggal_Invoice	Pembeli	Barang	Harga	Jumlah 	Total_Harga	Sub_Total	Pajak	Total_Invoice	Penjual														
+1 28/03/2022	Senin,28 Maret 2022	Ketut Susilo	Kaos	100.000	1	100.000	800.000	80.000	880.000	Juliana Silva 														
+1 28/03/2022	Senin,28 Maret 2022	Ketut Susilo	Jaket	200.000	1	200.000	800.000	80.000	880.000	Juliana Silva 														
+1 28/03/2022	Senin,28 Maret 2022	Ketut Susilo	Kaos Polo	120.000	1	120.000	800.000	80.000	880.000	Juliana Silva 														
+1 28/03/2022	Senin,28 Maret 2022	Ketut Susilo	Sepatu	230.000	1	230.000	800.000	80.000	880.000	Juliana Silva 														
+1 28/03/2022	Senin,28 Maret 2022	Ketut Susilo	Sepatu	100.000	1	100.000	800.000	80.000	880.000	Juliana Silva 														
+																								
+2NF																								
+tabel no_invoice														tabel barang 		tabel pembeli 		tabel penjual 		
+No_Invoice	Tanggal_Invoice	id_penjual	id_pembeli	id_Barang	Harga	Jumlah 	Total_Harga	Sub_Total	Pajak	Total_Invoice	Pembeli	Penjual		id_Barang	Barang	Harga		id_pembeli	Pembeli		id_penjual	Penjual		
+1 28/03/2022	Senin,28 Maret 2022	JS1	KS1	K1	100.000	1	100.000	800.000	80.000	880.000	Ketut Susilo	Juliana Silva 		K1	Kaos	100.000		KS1	Ketut Susilo		JS1	Juliana Silva 		
+1 28/03/2022	Senin,28 Maret 2022	JS1	KS1	J1	200.000	1	200.000	800.000	80.000	880.000	Ketut Susilo	Juliana Silva 		J1	Jaket	200.000								
+1 28/03/2022	Senin,28 Maret 2022	JS1	KS1	KP2	120.000	1	120.000	800.000	80.000	880.000	Ketut Susilo	Juliana Silva 		KP2	Kaos Polo	120.000								
+1 28/03/2022	Senin,28 Maret 2022	JS1	KS1	S1	230.000	1	230.000	800.000	80.000	880.000	Ketut Susilo	Juliana Silva 		S1	Sepatu	230.000								
+1 28/03/2022	Senin,28 Maret 2022	JS1	KS1	S2	100.000	1	100.000	800.000	80.000	880.000	Ketut Susilo	Juliana Silva 		S2	Sepatu	100.000								
+																								
+3NF																								
+tabel_invoice								tabel barang 		detail_Invoice					tabel_pajak		tabel pembeli 		tabel penjual 	
+No_Invoice	Tanggal_Invoice	id_penjual	id_pembeli	Sub_Total	id_pajak	Total_Invoice		id_Barang	Barang	Harga		No_Invoice	id_Barang	Jumlah 	Total_Harga		id_pajak	pajak 		id_pembeli	Pembeli		id_penjual	Penjual
+1 28/03/2022	Senin,28 Maret 2022	JS1	KS1	800.000	P1	880.000		K1	Kaos	100.000		1 28/03/2022	K1	1	100.000		P1	10%.		KS1	Ketut Susilo		JS1	Juliana Silva 
+1 28/03/2022	Senin,28 Maret 2022	JS1	KS1	800.000	P1	880.000		J1	Jaket	200.000		1 28/03/2022	J1	1	200.000									
+1 28/03/2022	Senin,28 Maret 2022	JS1	KS1	800.000	P1	880.000		KP2	Kaos Polo	120.000		1 28/03/2022	KP2	1	120.000									
+1 28/03/2022	Senin,28 Maret 2022	JS1	KS1	800.000	P1	880.000		S1	Sepatu	230.000		1 28/03/2022	S1	1	230.000									
+1 28/03/2022	Senin,28 Maret 2022	JS1	KS1	800.000	P1	880.000		S2	Sepatu	100.000		1 28/03/2022	S2	1	100.000
