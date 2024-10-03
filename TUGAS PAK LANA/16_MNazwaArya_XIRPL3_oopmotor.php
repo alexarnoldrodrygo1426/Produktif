@@ -1,5 +1,4 @@
 <?php
-// Definisi kelas
 class Motor {
     private $warna;
     private $merek;
